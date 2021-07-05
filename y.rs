@@ -3,7 +3,7 @@
 # This block is ignored by rustc
 set -e
 echo "[BUILD] y.rs" 1>&2
-rustc $0 -o ${0/.rs/.bin} -g
+rustc $0 -o ${0/.rs/.bin} -g -Clinker=aarch64-linux-gnu-gcc
 exec ${0/.rs/.bin} $@
 */
 

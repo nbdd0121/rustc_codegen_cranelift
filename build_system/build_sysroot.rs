@@ -49,7 +49,8 @@ pub(crate) fn build_sysroot(
         .arg("scripts/cargo.rs")
         .arg("-o")
         .arg(target_dir.join("cargo"))
-        .arg("-g");
+        .arg("-g")
+        .arg("-Clinker=aarch64-linux-gnu-gcc");
     spawn_and_wait(build_cargo_wrapper_cmd);
 
     let default_sysroot = crate::rustc_info::get_default_sysroot();

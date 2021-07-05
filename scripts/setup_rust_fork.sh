@@ -53,5 +53,9 @@ local-rebuild = true
 [rust]
 codegen-backends = ["cranelift"]
 deny-warnings = false
+
+[target."aarch64-unknown-linux-gnu"]
+#cc = "aarch64-linux-gnu-gcc
+linker = "aarch64-linux-gnu-gcc
 EOF
 popd
