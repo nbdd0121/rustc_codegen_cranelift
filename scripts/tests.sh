@@ -24,6 +24,8 @@ function no_sysroot_tests() {
         echo "[JIT] mini_core_hello_world (skipped)"
     fi
 
+    cp /usr/x86_64-w64-mingw32/lib/libwinpthread-1.dll target/out/ 
+
     echo "[AOT] mini_core_hello_world"
     $MY_RUSTC example/mini_core_hello_world.rs --crate-name mini_core_hello_world --crate-type bin -g --target "$TARGET_TRIPLE"
     $RUN_WRAPPER ./target/out/mini_core_hello_world abc bcd
